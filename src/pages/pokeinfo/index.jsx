@@ -1,8 +1,13 @@
 import React from 'react'
+import Header from '../../components/header'
+import InfoCard from '../../components/InfoCard'
 
 const Pokeinfo = () => {
   return (
-    <div>Pokeinfo</div>
+    <>
+    <Header />
+    <InfoCard />
+   </>
   )
 }
 

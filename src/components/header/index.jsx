@@ -12,19 +12,18 @@ const Header = () => {
             <HeaderLink to="/">
                 Home
             </HeaderLink>
-            <HeaderLink to="/">
+            <HeaderLink to="/PokeDex">
                 Pokédex
             </HeaderLink>
-            <HeaderLink to="/">
+            <HeaderLink to="/Legendaries">
                 Legendaries
             </HeaderLink>
-            <HeaderLink to="/">
-               documentation
+            <HeaderLink to="/PokeInfo">
+               PokeInfo
             </HeaderLink>
           </nav>
            </div>   
     </div>
   </>
 };
-
 export default Header;
