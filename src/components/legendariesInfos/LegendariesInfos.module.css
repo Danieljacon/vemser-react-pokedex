@@ -1,10 +1,11 @@
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .pokeinfo {
@@ -13,6 +14,7 @@
     gap: var(--s3);
     padding-bottom: var(--s4);
     animation: fadeIn 0.5s ease-in-out forwards;
+    color: var(--color-white) !important;
 }
 
 .pokeinfo>img {
@@ -22,50 +24,47 @@
     animation: fadeIn 0.5s ease-in-out;
 }
 
-.pokeinfo>div h2 {
-    font-size: var(--h1);
-    font-weight: 600;
-    color: var(--color-third);
-    text-transform: uppercase;
-    margin-bottom: var(--s2);
-}
-
-.pokeinfo>div p {
-    font-size: var(--h3);
-}
-
-.pokeinfo>div>div {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
-    justify-content: space-between;
-    gap: var(--s4);
-    margin-top: var(--s3);
-}
-
-.pokeinfo>div>div small {
-    font-size: var(--h2);
-    color: var(--color-third);
+.pokeContainer {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
-.pokeinfo>div>div p {
-    margin: 0;
-}
-
-.moves {
-    max-height: 110px;
-    overflow: hidden;
-}
-
-.subtype {
-    color: var(--color-third);
-    font-weight: 600;
+.pokeName {
+    font-size: var(--h1);
+    font-weight: 700;
     text-transform: uppercase;
-    font-size: var(--h4) !important;
+    margin-bottom: var(--s1);
+    color: var(--color-primary);
+    margin-left: var(--s3);
 }
 
-.block {
-    display: block;
+.pokeBox {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 120px));
+}
+
+.pokeLine {
+    display: flex;
+    flex-direction: column;
+    margin-left: var(--s3);
+}
+
+.pokeLine div {
+    display: flex;
+    align-items: center;
+    gap: var(--s1);
+    margin-bottom: var(--s1);
+    margin-left: var(--s3);
     text-transform: capitalize;
+}
+
+.pokeStatus {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s1);
+    margin-top: var(--s3);
+    background-color: var(--color-primary);
+    padding: 20px;
+    border-radius: var(--s4);
+    color: var(--color-dark);
 }

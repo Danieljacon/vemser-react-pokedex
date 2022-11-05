@@ -5,12 +5,13 @@ import Home from "../pages/home";
 import Pokedex from "../pages/pokedex";
 import Pokeinfo from "../pages/pokeinfo";
 import Legendaries from "../pages/legendaries";
+import Main from "../pages/main";
 
 const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/">
+        <Route path="/" element={<Main />}>
           <Route path="/" element={<Home />} />
           <Route path="/pokedex" element={<Pokedex />} />
           <Route path="/pokeinfo" element={<Pokeinfo />} />
