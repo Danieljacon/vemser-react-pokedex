@@ -11,3 +11,50 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --color-third: #F5DB13;
+  --color-primary: #F2B807;
+  --color-secondary: #F28F16;
+  --color-danger: #D93E30;
+  --color-white: #F6F7F9;
+  --color-dark: #212121;
+
+  --pk-dark: #A1A1A1;
+  --pk-grass: #70A83B;
+  --pk-ice: #A2CFF0;
+  --pk-fire: #F76545;
+  --pk-normal: #76AADB;
+  --pk-poison: #A974BC;
+  --pk-ground: #9B897B;
+  --pk-eletric: #F7C545;
+
+  /* Sizes */
+  --h1: 4.5rem;
+  --h2: 4rem;
+  --h3: 2.25rem;
+  --h4: 1.5rem;
+  --h5: 1.125rem;
+  --h6: .75rem;
+  --paragraph: 1rem;
+
+  /* Spaces */
+  --s1: 2px;
+  --s2: 4px;
+  --s3: 8px;
+  --s4: 16px;
+  --s5: 32px;
+  --s6: 64px;
+  --s7: 128px;
+
+  /* Shadows */
+  --shadow-1: 4px 4px 24px rgba(1, 17, 38, 0.2);
+  --shadow-2: 4px 4px 20px rgba(1, 28, 64, 0.2);
+  --shadow-3: 4px 4px 16px rgba(1, 28, 64, 0.2);
+  --shadow-4: 0px 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  max-width: 1125px;
+  margin: 0 auto;
+}
