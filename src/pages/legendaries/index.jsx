@@ -6,6 +6,8 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { Grid, Pagination } from "swiper";
 import legendariesPokemons from "../../json/legendaries.json";
+import LegendariesCard from "../../components/legendariesCard";
+import LegendariesInfos from "../../components/legendariesInfos";
 
 const Legendaries = () => {
   const [poke, setPoke] = useState([]);
@@ -15,53 +17,14 @@ const Legendaries = () => {
     console.log(data);
     return setPoke(data);
   };
+
   return (
     <section className={styles.container}>
       <div className="container">
         <div className={styles.box}>
           <h1 className={styles.title}>Legendaries</h1>
           {poke.length !== 0 ? (
-            <div className={styles.pokeinfo}>
-              <img
-                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${poke.id}.png`}
-                alt="Mew foto"
-              />
-              <div>
-                <h2>{poke.name}</h2>
-                <div>
-                  <span>
-                    <p className={styles.subtype}>Types</p>
-                    {poke.types.map((type) => {
-                      return (
-                        <span className={styles.block}>{type.type.name}</span>
-                      );
-                    })}
-                  </span>
-                  <div>
-                    <p className={styles.subtype}>Abilities</p>
-                    {poke.abilities.map((ability) => {
-                      return (
-                        <span className={styles.block}>
-                          {ability.ability.name}
-                        </span>
-                      );
-                    })}
-                  </div>
-                </div>
-                <div>
-                  {poke.stats.map((stat) => {
-                    return (
-                      <span>
-                        <small className={styles.subtype}>
-                          {stat.stat.name}
-                        </small>
-                        <p>{stat.base_stat}</p>
-                      </span>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
+            <LegendariesInfos poke={poke} />
           ) : (
             <h1>Selecione um Pokémon!</h1>
           )}
@@ -95,17 +58,7 @@ const Legendaries = () => {
                     key={pokemon.id}
                     onClick={() => getPokemon(pokemon.id)}
                   >
-                    <div className={styles.card}>
-                      <span>
-                        <img
-                          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemon.id}.png`}
-                          alt="Mew foto"
-                        />
-                      </span>
-                      <div>
-                        <h3>{pokemon.name}</h3>
-                      </div>
-                    </div>
+                    <LegendariesCard pokemon={pokemon} />
                   </SwiperSlide>
                 );
               })}
