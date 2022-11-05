@@ -15,11 +15,11 @@ const InfoCard = ({poke}) => {
             </div>
               <div className={style.teste2}>
                 <div className={style.nomegeracao}>
-                   <h1 className={style.nome}><strong>{poke.name}</strong></h1>
+                   <h1 className={style.nome}><strong>{poke?.name}</strong></h1>
                 </div>
                   <div className={style.habilidades}>
                   <p className={style.abilidades}><strong>ABILITES:</strong></p>
-                  {poke.abilities.map((ability) => {
+                  {poke?.abilities?.map((ability) => {
                       return (
                         <span className={style.block}>
                           {ability.ability.name}
@@ -30,28 +30,27 @@ const InfoCard = ({poke}) => {
                 <div className={style.points}>
                   <div>
                      <p className={style.abilidades}> <strong>HEALTHY POINTS</strong></p>
-                  <p className={style.city}>1 000 000</p>
+                  <p className={style.city}>{poke?.stats[0].base_stat}</p>
                   </div>
-                  <div className={style.abilidades}><strong>EXPERIENCE</strong>
-                  <p className={style.city}>1 000 000</p>
+                  <div className={style.abilidades}><strong>SPEED</strong>
+                  <p className={style.city}>{poke?.stats[5].base_stat}</p>
                   </div>
                 </div>
                 <div className={style.poderes}>
                   <div>
                      <p className={style.abilidades}> <strong>DEFENSE</strong></p>
-                  <p className={style.city}>49</p>
+                  <p className={style.city}>{poke?.stats[2].base_stat} </p>
                   </div>
                   <div className={style.abilidades}><strong>ATTACK</strong>
-                  <p className={style.city}>165</p>
+                  <p className={style.city}>{poke?.stats[1].base_stat}</p>
                   </div>
                   <div className={style.abilidades}><strong> SP ATTACK</strong>
-                  <p className={style.city}>130</p>
+                  <p className={style.city}>{poke?.stats[3].base_stat}</p>
                   </div>
                   <div className={style.abilidades}><strong> SP DEFENSE</strong>
-                  <p className={style.city}>130</p>
+                  <p className={style.city}>{poke?.stats[4].base_stat}</p>
                   </div>
                 </div>
-
                 </div>
               </div>
               </div>

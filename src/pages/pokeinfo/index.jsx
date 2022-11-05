@@ -12,11 +12,12 @@ const Pokeinfo = () => {
     return setPoke(data);
   };
   getPokemon();
+  console.log(poke);
  },[]) 
   return (
     <>
     <Header />
-    <InfoCard poke={poke}/>
+    {poke.length !== 0 ? (<InfoCard poke={poke}/>): (<div>carregando...</div>)}
    </>
   )
 }
