@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import styles from "./Legendaries.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
 import { Grid, Pagination } from "swiper";
 import legendariesPokemons from "../../json/legendaries.json";
 import LegendariesCard from "../../components/legendariesCard";
 import LegendariesInfos from "../../components/legendariesInfos";
+import legendariesImage from "../../assets/legendariesPokemons.png";
 
 const Legendaries = () => {
   const [poke, setPoke] = useState([]);
@@ -21,14 +19,20 @@ const Legendaries = () => {
   return (
     <section className={styles.container}>
       <div className="container">
-        <div className={styles.box}>
-          <h1 className={styles.title}>Legendaries</h1>
+        <div className={`${styles.box} ${styles.fadeIn}`}>
           {poke.length !== 0 ? (
             <LegendariesInfos poke={poke} />
           ) : (
-            <h1>Selecione um Pokémon!</h1>
+            <div className={styles.loadContainer}>
+              <img
+                className={styles.loadImage}
+                src={legendariesImage}
+                alt="legendaries"
+              />
+              <h1>Selecione um Pokémon abaixo!</h1>
+            </div>
           )}
-          <div>
+          <div className={styles.fadeIn}>
             <Swiper
               slidesPerView={3}
               grid={{
