@@ -1,203 +1,114 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Legendaries.module.css";
-import mew from "../../assets/mew.png";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import { EffectCoverflow, Navigation, Pagination } from "swiper";
+import { Grid, Pagination } from "swiper";
+import legendariesPokemons from "../../json/legendaries.json";
 
 const Legendaries = () => {
+  const [poke, setPoke] = useState([]);
+  const getPokemon = async (id) => {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    const data = await response.json();
+    console.log(data);
+    return setPoke(data);
+  };
   return (
     <section className={styles.container}>
       <div className="container">
         <div className={styles.box}>
           <h1 className={styles.title}>Legendaries</h1>
-          <div className={styles.pokeinfo}>
-            <img src={mew} alt="Mew foto" />
-            <div>
-              <h2>Mew</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-                commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                penatibus et magnis dis parturient montes, nascetur ridiculus
-                mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
-                quis, sem. Nulla consequat massa quis enim.{" "}
-              </p>
+          {poke.length !== 0 ? (
+            <div className={styles.pokeinfo}>
+              <img
+                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${poke.id}.png`}
+                alt="Mew foto"
+              />
               <div>
-                <span>
-                  <small>Healthy Points</small>
-                  <p>1000,000</p>
-                </span>
-                <span>
-                  <small>Experiance</small>
-                  <p>1000,000</p>
-                </span>
-                <span>
-                  <small>Attack</small>
-                  <p>1000,000</p>
-                </span>
-                <span>
-                  <small>Defense</small>
-                  <p>1000,000</p>
-                </span>
-                <span>
-                  <small>Special Attack</small>
-                  <p>1000,000</p>
-                </span>
-                <span>
-                  <small>Special Defense</small>
-                  <p>1000,000</p>
-                </span>
+                <h2>{poke.name}</h2>
+                <div>
+                  <span>
+                    <p className={styles.subtype}>Types</p>
+                    {poke.types.map((type) => {
+                      return (
+                        <span className={styles.block}>{type.type.name}</span>
+                      );
+                    })}
+                  </span>
+                  <div>
+                    <p className={styles.subtype}>Abilities</p>
+                    {poke.abilities.map((ability) => {
+                      return (
+                        <span className={styles.block}>
+                          {ability.ability.name}
+                        </span>
+                      );
+                    })}
+                  </div>
+                </div>
+                <div>
+                  {poke.stats.map((stat) => {
+                    return (
+                      <span>
+                        <small className={styles.subtype}>
+                          {stat.stat.name}
+                        </small>
+                        <p>{stat.base_stat}</p>
+                      </span>
+                    );
+                  })}
+                </div>
               </div>
             </div>
-          </div>
+          ) : (
+            <h1>Selecione um Pokémon!</h1>
+          )}
           <div>
             <Swiper
-             slidesPerView={3}
-             spaceBetween={20}
-             centeredSlides={true}
-             grabCursor={true}
-             loop={true}
-             pagination={{
-               clickable: true,
-             }}
-             breakpoints={{
-               640: {
-                 slidesPerView: 5,
-                 spaceBetween: 20,
-               },
-               768: {
-                 slidesPerView: 6,
-                 spaceBetween: 20,
-               },
-               1024: {
-                 slidesPerView: 7,
-                 spaceBetween: 20,
-               },
-             }}
-             modules={[Pagination]}
-             className="mySwiper"
+              slidesPerView={3}
+              grid={{
+                rows: 2,
+              }}
+              spaceBetween={20}
+              pagination={{
+                clickable: true,
+              }}
+              breakpoints={{
+                640: {
+                  slidesPerView: 5,
+                },
+                768: {
+                  slidesPerView: 6,
+                },
+                1024: {
+                  slidesPerView: 7,
+                },
+              }}
+              modules={[Grid, Pagination]}
+              className="mySwiper"
             >
-              <SwiperSlide>
-                <div className={styles.card}>
-                  <span>
-                    <img
-                      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/151.svg"
-                      alt="Mew foto"
-                    />
-                  </span>
-                  <div>
-                    <h3>Mew</h3>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className={styles.card}>
-                  <span>
-                    <img
-                      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/150.svg"
-                      alt="Mew foto"
-                    />
-                  </span>
-                  <div>
-                    <h3>Mewtwo</h3>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className={styles.card}>
-                  <span>
-                    <img
-                      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/150.svg"
-                      alt="Mew foto"
-                    />
-                  </span>
-                  <div>
-                    <h3>Mewtwo</h3>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className={styles.card}>
-                  <span>
-                    <img
-                      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/150.svg"
-                      alt="Mew foto"
-                    />
-                  </span>
-                  <div>
-                    <h3>Mewtwo</h3>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className={styles.card}>
-                  <span>
-                    <img
-                      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/150.svg"
-                      alt="Mew foto"
-                    />
-                  </span>
-                  <div>
-                    <h3>Mewtwo</h3>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className={styles.card}>
-                  <span>
-                    <img
-                      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/150.svg"
-                      alt="Mew foto"
-                    />
-                  </span>
-                  <div>
-                    <h3>Mewtwo</h3>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className={styles.card}>
-                  <span>
-                    <img
-                      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/150.svg"
-                      alt="Mew foto"
-                    />
-                  </span>
-                  <div>
-                    <h3>Mewtwo</h3>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className={styles.card}>
-                  <span>
-                    <img
-                      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/150.svg"
-                      alt="Mew foto"
-                    />
-                  </span>
-                  <div>
-                    <h3>Mewtwo</h3>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className={styles.card}>
-                  <span>
-                    <img
-                      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/150.svg"
-                      alt="Mew foto"
-                    />
-                  </span>
-                  <div>
-                    <h3>Mewtwo</h3>
-                  </div>
-                </div>
-              </SwiperSlide>
+              {legendariesPokemons.map((pokemon) => {
+                return (
+                  <SwiperSlide
+                    key={pokemon.id}
+                    onClick={() => getPokemon(pokemon.id)}
+                  >
+                    <div className={styles.card}>
+                      <span>
+                        <img
+                          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemon.id}.png`}
+                          alt="Mew foto"
+                        />
+                      </span>
+                      <div>
+                        <h3>{pokemon.name}</h3>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
             </Swiper>
           </div>
         </div>
