@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: var(--color-danger);
 }
 
@@ -17,23 +17,16 @@
 }
 
 .image404 {
+    max-width: 920px;
     width: 100%;
 }
-
-.imageRocket {
-    top: 0;
-    max-width: 490px;
-    position: absolute;
-    z-index: 999;
-}
-
 p {
     z-index: 1000;
     color: var(--color-dark);
     font-size: var(--h2);
     font-weight: 700;
-    margin-top: var(--s6);
-    margin-bottom: var(--s5);
+    margin-bottom: var(--s3);
+    text-align: center;
 }
 
 a {
