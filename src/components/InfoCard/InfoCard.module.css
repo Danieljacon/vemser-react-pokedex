@@ -97,5 +97,9 @@ gap: 15%;
   display: flex;
 gap: 15%;
   background-color: var(--color-dark);
+}
 
+.block {
+  display: block;
+  text-transform: capitalize;
 }

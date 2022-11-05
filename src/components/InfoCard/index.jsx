@@ -1,26 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./InfoCard.module.css";
 
-
-const InfoCard = () => {
+const InfoCard = ({poke}) => {
   return   <>
         <div className={style.co}>
             <div className={style.card}>
               <div className={style.teste1}>
-              {/* <img
-                    className={styles.pokemon}
-                    src={`/assets/posts/${post.id}/img.jpg`}
-                    alt="Imagem do Post"
-                    /> */}
+               <img
+                    className={style.pokemon}
+                    src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${poke.id}.png`}
+                alt="Mew foto"
+              />
+              <div></div>
             </div>
               <div className={style.teste2}>
                 <div className={style.nomegeracao}>
-                   <h1 className={style.nome}><strong>Charizard</strong></h1>
-                <h1  className={style.generation}><strong>Generation 1</strong></h1>
+                   <h1 className={style.nome}><strong>{poke.name}</strong></h1>
                 </div>
                   <div className={style.habilidades}>
                   <p className={style.abilidades}><strong>ABILITES:</strong></p>
-                  <p className={style.city}>Overgrow - Chlorophyll</p>
+                  {poke.abilities.map((ability) => {
+                      return (
+                        <span className={style.block}>
+                          {ability.ability.name}
+                        </span>
+                      );
+                    })}
                 </div>
                 <div className={style.points}>
                   <div>
@@ -47,10 +52,6 @@ const InfoCard = () => {
                   </div>
                 </div>
 
-
-
-
-               
                 </div>
               </div>
               </div>
