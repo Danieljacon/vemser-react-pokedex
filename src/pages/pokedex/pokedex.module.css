@@ -1,0 +1,20 @@
+.pokedex {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+span {
+    font-weight: 700;
+    font-size: 2.1875rem;
+}
+
+p {
+    font-size: 2.1875rem;
+}
+
+.texto {
+    margin: 73px 0 34px;
+    width: 100%;
+    text-align: center;
+}
