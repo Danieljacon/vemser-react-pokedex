@@ -4,7 +4,9 @@
   height: 12vh;
   padding-left: 14%;
   box-shadow: var(--shadow-2);
+  padding-bottom: 2%;
 }
+
 .teste {
   display: flex;
   gap: 15%;
