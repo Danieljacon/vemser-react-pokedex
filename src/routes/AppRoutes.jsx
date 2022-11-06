@@ -14,7 +14,7 @@ const AppRoutes = () => {
         <Route path="/" element={<Main />}>
           <Route path="/" element={<Home />} />
           <Route path="/pokedex" element={<Pokedex />} />
-          <Route path="/pokeinfo" element={<Pokeinfo />} />
+          <Route path="/pokeinfo/:id" element={<Pokeinfo />} />
           <Route path="/legendaries" element={<Legendaries />} />
         </Route>
         <Route path="*" element={<Error />} />

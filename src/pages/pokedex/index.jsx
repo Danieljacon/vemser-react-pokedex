@@ -48,10 +48,10 @@ const Pokedex = () => {
       <div className={styles.pokedex}>
         {pokeSearch.length > 0
           ? pokeSearch.map((pokemon, index) => {
-              return <CardPokedex index={index} poke={pokemon} key={index} />;
+              return <CardPokedex poke={pokemon} key={index} />;
             })
           : poke.map((pokemon, index) => {
-              return <CardPokedex index={index} poke={pokemon} key={index} />;
+              return <CardPokedex poke={pokemon} key={index} />;
             })}
       </div>
     </div>
