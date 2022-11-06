@@ -1,5 +1,4 @@
 import React, { useState, useEffect} from "react";
-import Header from '../../components/header'
 import InfoCard from '../../components/InfoCard'
 
 const Pokeinfo = () => {
@@ -16,7 +15,6 @@ const Pokeinfo = () => {
  },[]) 
   return (
     <>
-    <Header />
     {poke.length !== 0 ? (<InfoCard poke={poke}/>): (<div>carregando...</div>)}
    </>
   )
