@@ -19,6 +19,7 @@
 }
 
 .sec {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -26,12 +27,14 @@
 }
 
 .find {
+  width: 100%;
   font-size: 3.75rem;
   font-weight: 400;
   text-align: left;
 }
 
 .type {
+  width: 100%;
   font-size: var(--h2);
   font-weight: 400;
   text-align: left;
@@ -51,4 +54,22 @@
 
 .banner {
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  .corpo {
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  }
+  .find {
+    font-size: var(--h1);
+  }
+  .type {
+    font-size: var(--h3);
+  }
+  .botao {
+    font-size: var(--h3);
+    width: 100%;
+    text-align: center;
+  }
+
 }

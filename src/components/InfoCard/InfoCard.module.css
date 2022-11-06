@@ -1,3 +1,13 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
 .co {
   min-height: 100vh;
   background: var(--color-dark);
@@ -5,6 +15,7 @@
   justify-content: center;
   align-items: center;
   padding: 12px;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 .card {
