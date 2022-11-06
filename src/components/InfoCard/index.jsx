@@ -33,7 +33,6 @@ const InfoCard = ({ poke }) => {
             <div className={style.points}>
               <div>
                 <p className={style.abilidades}>
-                  {" "}
                   <strong>HEALTHY POINTS</strong>
                 </p>
                 <p className={style.city}>{poke?.stats[0].base_stat}</p>
@@ -46,7 +45,6 @@ const InfoCard = ({ poke }) => {
             <div className={style.poderes}>
               <div>
                 <p className={style.abilidades}>
-                  {" "}
                   <strong>DEFENSE</strong>
                 </p>
                 <p className={style.city}>{poke?.stats[2].base_stat} </p>
