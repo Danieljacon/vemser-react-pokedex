@@ -1,6 +1,7 @@
 # Projeto final do módulo de React
 
-Projeto feito em React, utilizando a API https://pokeapi.co/
+Pokédex feita em React, utilizando a API https://pokeapi.co/
+Acessar o deploy: https://vemser-react-pokedex.vercel.app/
 
 ## Iniciando o projeto:
 ### `npm install`
