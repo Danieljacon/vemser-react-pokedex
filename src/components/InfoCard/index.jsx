@@ -24,9 +24,11 @@ const InfoCard = ({ poke }) => {
               <p className={style.abilidades}>
                 <strong>ABILITES:</strong>
               </p>
-              {poke?.abilities?.map((ability) => {
+              {poke?.abilities?.map((ability, index) => {
                 return (
-                  <span className={style.block}>{ability.ability.name}</span>
+                  <span key={index} className={style.block}>
+                    {ability.ability.name}
+                  </span>
                 );
               })}
             </div>
