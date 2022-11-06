@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "../cardPokedex/cardPokedex.module.css";
+import styles from "./cardPokedex.module.css";
 
 const CardPokedex = ({ poke }) => {
   const pokeImage = poke.url.split("/");

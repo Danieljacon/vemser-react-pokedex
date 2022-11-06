@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import CardPokedex from "../../components/cardPokedex";
-import styles from "../pokedex/pokedex.module.css";
+import styles from "./Pokedex.module.css";
 import { useForm } from "react-hook-form";
 
 const Pokedex = () => {
