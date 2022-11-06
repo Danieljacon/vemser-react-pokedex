@@ -2,8 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import styles from "./Header.module.css";
 import logo from "../../assets/logo.png";
 import HeaderLink from "../HeaderLink";
-import { ReactComponent as IconHamburguer } from "../../assets/i-hamb.svg";
-import { ReactComponent as IconClose } from "../../assets/x-solid.svg";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
