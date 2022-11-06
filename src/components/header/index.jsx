@@ -18,9 +18,6 @@ const Header = () => {
             <HeaderLink to="/Legendaries">
                 Legendaries
             </HeaderLink>
-            <HeaderLink to="/PokeInfo">
-               PokeInfo
-            </HeaderLink>
           </nav>
            </div>   
     </div>
