@@ -1,6 +1,8 @@
 .pokedex {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    place-items: center;
     gap: 20px;
 }
 
@@ -17,4 +19,13 @@ p {
     margin: 73px 0 34px;
     width: 100%;
     text-align: center;
+}
+
+.input {
+    width: 100%;
+    margin-bottom: 18px;
+    border: 1px solid burlywood;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-size: 16px;
 }
