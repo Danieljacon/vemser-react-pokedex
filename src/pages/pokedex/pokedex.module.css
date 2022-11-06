@@ -6,12 +6,12 @@
     gap: 20px;
 }
 
-span {
+.pokedex span {
     font-weight: 700;
     font-size: 2.1875rem;
 }
 
-p {
+.pokedex p {
     font-size: 2.1875rem;
 }
 
