@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import styles from "./Header.module.css";
 import logo from "../../assets/logo.png";
 import HeaderLink from "../HeaderLink";
-import {ReactComponent as IconHamburguer} from "../../assets/i-hamb.svg";
-import {ReactComponent as IconClose} from "../../assets/x-solid.svg";
+import { ReactComponent as IconHamburguer } from "../../assets/i-hamb.svg";
+import { ReactComponent as IconClose } from "../../assets/x-solid.svg";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -40,11 +40,7 @@ const Header = () => {
             <HeaderLink to="/Legendaries">Legendaries</HeaderLink>
           </nav>
           <button className={styles.menuBtn} onClick={toggleMenu}>
-            {open ? (
-             "⤫"
-            ) : (
-              "☰"
-            )}
+            {open ? "⤫" : "☰"}
           </button>
         </div>
       </div>
