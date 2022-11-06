@@ -6,13 +6,13 @@
 
 .sec {
   width: 50%;
-  padding-top: 12%;
+  padding-top: 5%;
   padding-left: 5%;
   height: 822px;
 }
 
 .secti {
- padding-top: 7%;
+ padding-top: -5%;
   width: 50%;
 }
 
@@ -50,5 +50,6 @@
 }
 .team{
     padding-left: 70%;
-    padding-top: 4%;
+    padding-top: 10%;
+
 }
