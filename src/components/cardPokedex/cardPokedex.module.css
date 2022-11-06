@@ -1,0 +1,64 @@
+:root {
+    --cor-hs:#212121;
+    --cor-p: #4B4B4B;
+}
+.card {
+    display: flex;
+    width: 351px;
+    justify-content: space-between;
+    /* grid-template-columns: 2fr 3fr; */
+    border-radius: 10px;
+    background-color:burlywood;
+    overflow: hidden;
+    padding: 0 30px 10px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;   
+}
+
+h4 {
+    color:  var(--cor-hs);
+    font-size: 1.125rem;
+    margin: 5px 0 12px;
+    text-transform: capitalize;
+}
+
+.atributos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px; 
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border:solid 3px var(--cor-hs);
+    color: var(--cor-hs);
+    font-size: .9375rem;
+}
+
+.contAtributos {
+    display: flex;
+    gap:13px;
+}
+
+p {
+    color: var(--cor-p);
+}
+
+img {
+    max-height: 120px;
+    width: auto;
+}
+
+
+
