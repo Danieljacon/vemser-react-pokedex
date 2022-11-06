@@ -7,4 +7,6 @@
 
 .linkSublinhado {
     text-decoration: none;
+    background-color: var(--color-primary);
+    border-bottom: 2px solid var(--color-secondary);
 }

@@ -1,9 +1,19 @@
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
 .pokedex {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1rem;
     place-items: center;
     gap: 20px;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 .pokedex span {
@@ -16,7 +26,7 @@
 }
 
 .texto {
-    margin: 73px 0 34px;
+    padding: 16px 0;
     width: 100%;
     text-align: center;
 }
